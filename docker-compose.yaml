@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: java-api-test-runner
+    networks:
+      - api-test-network
+
+networks:
+  api-test-network:
+    driver: bridge
