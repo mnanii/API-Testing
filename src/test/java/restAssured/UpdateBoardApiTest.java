@@ -22,9 +22,10 @@ public class UpdateBoardApiTest extends RestAssuredBaseTest {
     public void setUp() throws URISyntaxException, IOException {
         board = createBoard(BOARD_NAME);
         System.out.println("Board has been created.");
+        boardId = board.getId();
     }
 
-// TODO
+
     @Test
     public void updateBoardTestApi() {
 

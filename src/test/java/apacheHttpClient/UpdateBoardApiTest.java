@@ -100,7 +100,7 @@ public class UpdateBoardApiTest extends ApacheHttpBaseTest {
         HttpPut putRequest = new HttpPut(uri);
         Response<String> putResponse = sendRequest(putRequest);
         assertThat(putResponse.getStatusCode(), equalTo(HttpStatus.SC_UNAUTHORIZED));
-        assertEquals("invalid app key", putResponse.getResponseBody());
+        assertEquals("invalid key", putResponse.getResponseBody());
     }
 
     @Test

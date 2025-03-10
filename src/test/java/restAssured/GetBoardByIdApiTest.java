@@ -25,6 +25,7 @@ public class GetBoardByIdApiTest extends RestAssuredBaseTest {
     public void setUp(){
         board = createBoard(BOARD_NAME);
         System.out.println("Board has been created.");
+        boardId = board.getId();
     }
 
     @Test
@@ -79,7 +80,7 @@ public class GetBoardByIdApiTest extends RestAssuredBaseTest {
                 .get("/boards/{id}")
                 .then()
                 .statusCode(401)
-                .body(equalTo("invalid app key"))
+                .body(equalTo("invalid key"))
                 .log().all();
     }
 

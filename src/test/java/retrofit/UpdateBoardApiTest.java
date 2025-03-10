@@ -56,6 +56,8 @@ public class UpdateBoardApiTest extends RetrofitBaseTest {
     @Test
     public void when_getBoardWithInvalidKey_then_Unauthorized() throws IOException {
         Board board = createBoard(BOARD_NAME);
+        boardId = board.getId();
+
         BoardUpdateRequest updateBoardRequest = new BoardUpdateRequest("test");
 
         Call<Board> boardCall = trelloClient.updateBoard(board.getId(), "124", getToken(), updateBoardRequest);

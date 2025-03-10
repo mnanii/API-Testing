@@ -24,6 +24,7 @@ public class DeleteBoardApiTest extends RestAssuredBaseTest {
     public void setUp() throws URISyntaxException, IOException {
         board = createBoard(BOARD_NAME);
         System.out.println("Board has been created.");
+        boardId = board.getId();
     }
 
     @Test
@@ -81,7 +82,7 @@ public class DeleteBoardApiTest extends RestAssuredBaseTest {
                 .delete("/boards/{id}")
                 .then()
                 .statusCode(401)
-                .body(equalTo("invalid app key"))
+                .body(equalTo("invalid key"))
                 .log().all();
     }
 

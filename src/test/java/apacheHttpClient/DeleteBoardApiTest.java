@@ -77,7 +77,7 @@ public class DeleteBoardApiTest extends ApacheHttpBaseTest {
         HttpDelete httpDelete = new HttpDelete(uri);
         Response<String> deleteResponse = sendRequest(httpDelete);
         assertThat(deleteResponse.getStatusCode(), equalTo(HttpStatus.SC_UNAUTHORIZED));
-        AssertJUnit.assertEquals("invalid app key", deleteResponse.getResponseBody());
+        AssertJUnit.assertEquals("invalid key", deleteResponse.getResponseBody());
     }
 
     @Test

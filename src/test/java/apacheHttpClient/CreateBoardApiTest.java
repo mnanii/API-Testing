@@ -74,7 +74,7 @@ public class CreateBoardApiTest extends ApacheHttpBaseTest{
         HttpPost postRequest = new HttpPost(uri);
         Response<String> postResponse = sendRequest(postRequest);
         assertThat(postResponse.getStatusCode(), equalTo(HttpStatus.SC_UNAUTHORIZED));
-        assertEquals(postResponse.getResponseBody(), "invalid app key");
+        assertEquals(postResponse.getResponseBody(), "invalid key");
     }
 
     @Test

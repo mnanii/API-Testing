@@ -1,6 +1,5 @@
 package retrofit;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Board;
 import model.InvalidBoardResponse;
 import org.testng.annotations.BeforeTest;

@@ -88,7 +88,7 @@ public class CreateBoardApiTest extends RestAssuredBaseTest {
                 .post("/boards/")
                 .then()
                 .statusCode(401)
-                .body(equalTo("invalid app key"))
+                .body(equalTo("invalid key"))
                 .log().all();
     }
 

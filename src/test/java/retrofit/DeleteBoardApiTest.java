@@ -53,6 +53,7 @@ public class DeleteBoardApiTest extends RetrofitBaseTest {
     @Test
     public void when_deleteBoardWithInvalidKey_then_Unauthorized() throws IOException {
         Board board = createBoard(BOARD_NAME);
+        boardId = board.getId();
 
         Call<Board> boardCall = trelloClient.deleteBoard(board.getId(), "124", getToken());
         Response<Board> response = boardCall.execute();
