@@ -44,6 +44,4 @@ public class CreateBoardStepDefinitions extends RestAssuredBaseTest {
                 .body("id", notNullValue())
                 .log().all();
     }
-
-
 }
