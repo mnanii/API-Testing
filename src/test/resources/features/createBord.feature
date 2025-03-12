@@ -5,3 +5,4 @@ Scenario: Successful create a new board
   When I send a post request to create a board
   Then response status is 200
   And response should contain id
+  Then board is deleted
