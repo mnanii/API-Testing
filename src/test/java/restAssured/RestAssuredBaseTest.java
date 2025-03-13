@@ -16,7 +16,7 @@ import java.util.Properties;
 import static io.restassured.RestAssured.given;
 import static utility.TestUtil.TRELLO_URL;
 
-abstract class RestAssuredBaseTest {
+public abstract class RestAssuredBaseTest {
 
     protected String boardId;
     protected Board board;
@@ -35,15 +35,6 @@ abstract class RestAssuredBaseTest {
             System.out.println("Board has been deleted.");
         }
     }
-
-//    protected String createBoard(String boardName) {
-//        Response response = getBaseRequestSpecification()
-//                .queryParam("name", boardName)
-//                .post("/boards/");
-//
-//        Board board = response.body().as(Board.class);
-//        return board.getId();
-//    }
 
     protected Board createBoard(String boardName) {
         Response response = getBaseRequestSpecification()

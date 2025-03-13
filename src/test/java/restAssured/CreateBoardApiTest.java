@@ -2,16 +2,13 @@ package restAssured;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import model.Board;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utility.TestUtil;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -35,7 +32,7 @@ public class CreateBoardApiTest extends RestAssuredBaseTest {
         Response response = request.post("/boards/");
         Board board = response.body().as(Board.class);
         boardId = board.getId();
-        //Board board = createBoard(BOARD_NAME);
+
         response
                 .then()
                 .statusCode(200)
